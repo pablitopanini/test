@@ -7,7 +7,8 @@ import {
   Redirect
 } from 'react-router'
 import Blog from './pages/Blog'
-import Add from './pages/Add'
+import Edit from './pages/Edit'
+import Post from './pages/Post'
 
 const NoMatch = ({ location }: RouteComponentProps) => {
   return (
@@ -27,8 +28,10 @@ class Routes extends React.Component<RouteComponentProps> {
 
     return (
       <Switch>
-        <Route path="/blog/:id?" component={Blog} />
-        <Route path="/add" component={Add} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/add" component={Edit} />
+        <Route path="/edit/:id" component={Edit} />
+        <Route path="/post/:id" component={Post} />
 
         <Route component={NoMatch} />
       </Switch>
